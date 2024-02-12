@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-car',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './car.component.html',
   styleUrl: './car.component.css'
 })
@@ -32,8 +33,42 @@ colors: Colors = {
    this.options = ['ABS', 'Autopilot', 'AutoParking'];
  }
 
-}
-
+ carSelect(carName: string) {
+  if(carName === 'bmw') {
+    this.name = 'BMW';
+    this.speed = 170;
+      this.model = 'M5';
+      this.colors = {
+        car: 'Black', 
+        salon: 'White',
+      wheels: 'Silver'
+      };
+      this.options = ['ABS', 'Autopilot', 'AutoParking'];
+  } else if( carName === 'audi') {
+    this.name = 'Audi';
+    this.speed = 170;
+      this.model = 'M5';
+      this.colors = {
+        car: 'Black', 
+        salon: 'White',
+      wheels: 'Silver'
+      };
+      this.options = ['ABS', 'Autopilot', 'AutoParking'];
+  } else {
+    this.name = 'Mercedes';
+    this.speed = 170;
+      this.model = 'M5';
+      this.colors = {
+        car: 'Black', 
+        salon: 'White',
+      wheels: 'Silver'
+      };
+      this.options = ['ABS', 'Autopilot', 'AutoParking'];
+  }
+ 
+ }
+ }
+ 
 interface Colors {
   car: string, 
   salon: string, 
