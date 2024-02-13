@@ -67,6 +67,20 @@ colors: Colors = {
   }
  
  }
+
+ addOption(option: string) {
+this.options.unshift(option);
+return false;
+ }
+
+ deleteOption(option: string) {
+  for(let i =0; i < this.options.length; i++) {
+    if(this.options[i] == option) {
+this.options.splice(i ,1);
+break;
+    }
+  }
+ }
  }
  
 interface Colors {
