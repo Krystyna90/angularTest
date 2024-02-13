@@ -11,11 +11,20 @@
             <li>Wheel color:<strong>{{colors.wheels}}</strong></li>
         </ul>
     </div>
-
+<form (submit)="addOption(option.value)">
+    <div class="form-group">
+        <label for="option">Adding new opportunity</label>
+        <input class="form-control" type="text" id="option" placeholder="Enter something..." #option/>
+        <br>
+        <button type="submit" class="btn btn-outline-success">Add</button>
+    </div>
+</form>
     <h5>Car opportunities:</h5>
     <div class="alert alert-warning">
         <ul>
-            <li *ngFor="let option of options; let i = index">{{i + 1}}-{{option}}</li>
+            <li *ngFor="let option of options; let i = index">{{i + 1}}-{{option}}
+                <button class="btn btn-warning btn-sm" type="button" (click)="deleteOption(option)">X</button>
+            </li>
         </ul>
     </div>
 
