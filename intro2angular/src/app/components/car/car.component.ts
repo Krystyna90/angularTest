@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-car',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './car.component.html',
   styleUrl: './car.component.css'
 })
@@ -18,6 +19,7 @@ colors: Colors = {
    wheels: ''
  };
  options: string[] = [];
+ isEdit: boolean = false;
 
  constructor() {}
 
@@ -80,6 +82,10 @@ this.options.splice(i ,1);
 break;
     }
   }
+ }
+
+ showEdit() {
+  this.isEdit = !this.isEdit;
  }
  }
  
